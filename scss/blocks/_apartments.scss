@@ -1,0 +1,28 @@
+.apartments {
+  position: relative;
+
+  &::before {
+    content: "III";
+    right: calc(50% + 555px); // Половина экрана + половина размера контейнера
+    transform: translate(50%, 0); // Двигает эл-т к малому контейнеру
+    @include decorNumber;
+  }
+}
+
+.apartments__title {
+  margin-bottom: 88px;
+
+  @include mediaTablet {
+    margin-bottom: 44px;
+  }
+}
+
+.apartments__cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+
+  @include mediaTablet {
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); // Размещается столько колонок, сколько может разместиться. Мин. размер колонки 290px и выше
+  }
+}
